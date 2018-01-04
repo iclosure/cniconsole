@@ -1,0 +1,66 @@
+<RCC>
+    <qresource prefix="/images/tool_widget">
+        <file alias="1">tool_widget/1.png</file>
+        <file alias="2">tool_widget/2.png</file>
+        <file alias="3">tool_widget/3.png</file>
+        <file alias="4">tool_widget/4.png</file>
+        <file alias="background">tool_widget/background.png</file>
+        <file alias="5">tool_widget/5.png</file>
+    </qresource>
+    <qresource prefix="/images/global">
+        <file alias="crdtech">global/crdtech.png</file>
+        <file alias="bk_client">global/bk_client.png</file>
+    </qresource>
+    <qresource prefix="/images/main_menu">
+        <file alias="about">main_menu/about.png</file>
+        <file alias="help">main_menu/help.png</file>
+        <file alias="setting">main_menu/setting.png</file>
+    </qresource>
+    <qresource prefix="/images/skins">
+        <file alias="0_big">skins/0_big.png</file>
+        <file alias="1_big">skins/1_big.png</file>
+        <file alias="2_big">skins/2_big.png</file>
+        <file alias="3_big">skins/3_big.png</file>
+        <file alias="4_big">skins/4_big.png</file>
+        <file alias="5_big">skins/5_big.png</file>
+        <file alias="6_big">skins/6_big.png</file>
+        <file alias="7_big">skins/7_big.png</file>
+        <file alias="8_big">skins/8_big.png</file>
+        <file alias="9_big">skins/9_big.png</file>
+        <file alias="10_big">skins/10_big.png</file>
+        <file alias="11_big">skins/11_big.png</file>
+        <file alias="12_big">skins/12_big.png</file>
+        <file alias="13_big">skins/13_big.png</file>
+        <file alias="14_big">skins/14_big.png</file>
+        <file alias="15_big">skins/15_big.jpg</file>
+        <file alias="16_big">skins/16_big.jpg</file>
+        <file alias="17_big">skins/17_big.jpg</file>
+        <file alias="18_big">skins/18_big.jpg</file>
+        <file alias="19_big">skins/19_big.jpg</file>
+        <file alias="20_big">skins/20_big.jpg</file>
+        <file alias="21_big">skins/21_big.jpg</file>
+        <file alias="22_big">skins/22_big.jpg</file>
+        <file alias="23_big">skins/23_big.jpg</file>
+    </qresource>
+    <qresource prefix="/images/global/controlbar">
+        <file alias="arrow_down">global/controlbar/arrow_down.png</file>
+        <file alias="btn_green">global/controlbar/btn_green.png</file>
+        <file alias="btn_lightgreen">global/controlbar/btn_lightgreen.png</file>
+        <file alias="gnome_go_next">global/controlbar/gnome_go_next.png</file>
+        <file alias="arrow_right">global/controlbar/arrow_right.png</file>
+    </qresource>
+    <qresource prefix="/images/main_menu/settings">
+        <file alias="network">main_menu/settings/network.png</file>
+        <file alias="serialport">main_menu/settings/serialport.ico</file>
+    </qresource>
+    <qresource prefix="/images/global/controlbar/scrollbar">
+        <file alias="scrollbar_bgv">global/controlbar/scrollbar/sb-bgv.png</file>
+        <file alias="scrollbar_v1">global/controlbar/scrollbar/sbv1.png</file>
+        <file alias="scrollbar_v2">global/controlbar/scrollbar/sbv2.png</file>
+        <file alias="scrollbar_v3">global/controlbar/scrollbar/sbv3.png</file>
+    </qresource>
+    <qresource prefix="/images/demos">
+        <file alias="app-js">demos/app-js.png</file>
+        <file alias="app-x-js">demos/app-x-js.png</file>
+    </qresource>
+</RCC>

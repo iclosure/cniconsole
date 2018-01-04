@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  product: cniconsole
+  company: crdtech
+  author: closure (lkh)
+  date: 5/27/2014 13:15
+  link: http://www.crdtech.cn
+  copyright (c) 2014 crdtech inc. all rights reserved.
+  -->
+<cniconsole version="1.1.0">
+    <network>
+        <tacanes name="塔康地空" header0="0x54" header1="0x41" header2="0x47" deviceid="0xA0">
+            <!-- 塔康地空 - 常规参数 -->
+            <general name="常规">
+                <item name="编码模式" function="1" type="enum">
+                    <option default="X">
+                        <item>Y</item>
+                        <item>X</item>
+                    </option>
+                </item>
+                <item name="工作波道" function="2" type="numeric" checkable="false">
+                    <numeric unit="波道">
+                        <item default="4" ratio="1" step="1" range="[1,126]" />
+                    </numeric>
+                </item>
+                <item name="距离模拟" function="6" type="numeric">
+                    <numeric unit="公里">
+                        <item default="0.2" decimals="1" ratio="0.1" step="0.1" range="[0,700]" />
+                    </numeric>
+                </item>
+                <item name="距离速度" function="7" type="numeric">
+                    <numeric unit="公里/小时">
+                        <item default="0" ratio="1" step="1" range="[-9999,9999]" />
+                    </numeric>
+                </item>
+                <item name="方位模拟" function="8" type="numeric">
+                    <numeric unit="°">
+                        <item default="100" decimals="1" ratio="0.1" step="0.1" range="[0,359.9]" />
+                    </numeric>
+                </item>
+                <item name="方位速度" function="9" type="numeric">
+                    <numeric unit="°/秒">
+                        <item default="-1" ratio="1" step="1" range="[-39,39]" />
+                    </numeric>
+                </item>
+                <item name="15Hz调制度" function="10" type="numeric">
+                    <numeric unit="%">
+                        <item default="20" ratio="1" step="1" range="[0,39]" />
+                    </numeric>
+                </item>
+                <item name="135Hz调制度" function="11" type="numeric">
+                    <numeric unit="%">
+                        <item default="20" ratio="1" step="1" range="[0,39]" />
+                    </numeric>
+                </item>
+                <item name="发射功率" function="31" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="-70" ratio="1" step="1" range="[-110,0]" />
+                    </numeric>
+                </item>
+                <item name="接收功率" function="32" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="20" ratio="1" step="10" range="[-30,50]" />
+                    </numeric>
+                </item>
+                <item name="复位" function="250" type="button" default="true" />
+            </general>
+            <!-- 塔康地空 - 高级参数 -->
+            <advance name="高级">
+                <item name="脉冲编码" function="3" type="numeric">
+                    <numeric unit="微秒" related="general/1">
+                        <item name="X" default="6" decimals="1" ratio="0.1" step="0.1" range="[6,18]" />
+                        <item name="Y" default="24" decimals="1" ratio="0.1" step="0.1" range="[24,36]" />
+                    </numeric>
+                </item>
+                <item name="回答概率" function="4" type="numeric">
+                    <numeric unit="%">
+                        <item default="0" ratio="1" step="1" range="[0,80]" />
+                    </numeric>
+                </item>
+                <item name="回答/识别" function="1" type="enum">
+                    <option default="回答">
+                        <item>识别</item>
+                        <item>回答</item>
+                        <item>正常</item>
+                    </option>
+                </item>
+                <item name="15Hz相移" function="12" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" ratio="1" step="1" range="[-39,39]" />
+                    </numeric>
+                </item>
+                <item name="填充速率" function="13" type="numeric">
+                    <numeric unit="对/秒">
+                        <item default="0" ratio="1" step="1" range="[0,9999]" />
+                    </numeric>
+                </item>
+                <item name="主群状态" function="14" type="enum">
+                    <option default="无效">
+                        <item>无效</item>
+                        <item>有效</item>
+                    </option>
+                </item>
+                <item name="辅群状态" function="15" type="enum">
+                    <option default="无效">
+                        <item>无效</item>
+                        <item>有效</item>
+                    </option>
+                </item>
+                <item name="同步选择" function="17" type="enum">
+                    <option default="15Hz方位定时点">
+                        <item>主群触发</item>
+                        <item>辅群触发</item>
+                        <item>15Hz方位定时点</item>
+                        <item>半幅输出</item>
+                        <item>询问译码</item>
+                    </option>
+                </item>
+            </advance>
+        </tacanes>
+        <tacanss name="塔康空空" header0="0x54" header1="0x41" header2="0x41" deviceid="0xA2">
+            <!-- 塔康空空 - 常规参数 -->
+            <general name="常规">
+                <item name="编码模式" function="1" type="enum">
+                    <option default="X">
+                        <item>Y</item>
+                        <item>X</item>
+                    </option>
+                </item>
+                <item name="工作波道" function="2" type="numeric" checkable="false">
+                    <numeric unit="波道">
+                        <item default="5" ratio="1" step="1" range="[1,126]" />
+                    </numeric>
+                </item>
+                <item name="距离模拟" function="6" type="numeric">
+                    <numeric unit="公里">
+                        <item default="100" decimals="1" ratio="0.1" step="0.1" range="[0,700]" />
+                    </numeric>
+                </item>
+                <item name="距离速度" function="7" type="numeric">
+                    <numeric unit="公里/小时">
+                        <item default="0" ratio="1" step="1" range="[-9999,9999]" />
+                    </numeric>
+                </item>
+                <item name="发射功率" function="31" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="-70" ratio="1" step="1" range="[-110,0]" />
+                    </numeric>
+                </item>
+                <item name="接收功率" function="32" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="20" ratio="1" step="10" range="[-30,50]" />
+                    </numeric>
+                </item>
+                <item name="复位" function="250" type="button" default="true" />
+            </general>
+            <!-- 塔康空空 - 高级参数 -->
+            <advance name="高级">
+                <item name="脉冲编码" function="3" type="numeric">
+                    <numeric unit="微秒" related="general/1">
+                        <item name="X" default="6" decimals="1" ratio="0.1" step="0.1" range="[6,18]" />
+                        <item name="Y" default="18" decimals="1" ratio="0.1" step="0.1" range="[18,30]" />
+                    </numeric>
+                </item>
+                <item name="回答概率" function="4" type="numeric">
+                    <numeric unit="%">
+                        <item default="0" ratio="1" step="1" range="[0,100]" />
+                    </numeric>
+                </item>
+                <item name="空空询问率" function="22" type="numeric">
+                    <numeric unit="对/秒">
+                        <item default="0" ratio="1" step="1" range="[0,9999]" />
+                    </numeric>
+                </item>
+                <item name="同步选择" function="17" type="enum">
+                    <option default="半幅输出">
+                        <item>半幅输出</item>
+                        <item>它机询问译码</item>
+                        <item>本机译码</item>
+                    </option>
+                </item>
+            </advance>
+        </tacanss>
+        <mwpdmd name="微波测距" header0="0x4D" header1="0x4C" header2="0x53" deviceid="0xC0">
+            <!-- 微波测距 - 常规参数 -->
+            <general name="常规">
+                <item name="方位模式" function="1" type="enum">
+                    <option default="方位">
+                        <item>方位</item>
+                        <item>高速方位</item>
+                    </option>
+                </item>
+                <item name="工作波道" function="2" type="numeric">
+                    <numeric unit="波道">
+                        <item default="500" ratio="1" step="1" range="[500,699]" offset="-499" />
+                    </numeric>
+                </item>
+                <item name="功率电平" function="3" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="-70" ratio="1" step="1" range="[-110,-10]" />
+                    </numeric>
+                </item>
+                <item name="方位模拟值" function="8" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[-62,62]" />
+                    </numeric>
+                </item>
+                <item name="方位波束宽度" function="11" type="enum">
+                    <option default="3 °">
+                        <item>0.5 °</item>
+                        <item>1 °</item>
+                        <item>2 °</item>
+                        <item>3 °</item>
+                        <item>4 °</item>
+                        <item>5 °</item>
+                    </option>
+                </item>
+                <item name="高速方位模拟值" function="16" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[-42,42]" />
+                    </numeric>
+                </item>
+                <item name="高速方位波束宽度" function="19" type="enum">
+                    <option default="3 °">
+                        <item>0.5 °</item>
+                        <item>1 °</item>
+                        <item>2 °</item>
+                        <item>3 °</item>
+                        <item>4 °</item>
+                        <item>5 °</item>
+                    </option>
+                </item>
+                <item name="仰角模拟值" function="24" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[-1.5,29.5]" />
+                    </numeric>
+                </item>
+                <item name="仰角波束宽度" function="27" type="enum">
+                    <option default="3 °">
+                        <item>0.5 °</item>
+                        <item>1 °</item>
+                        <item>2 °</item>
+                        <item>3 °</item>
+                        <item>4 °</item>
+                        <item>5 °</item>
+                    </option>
+                </item>
+                <item name="DME编码模式" function="200" type="enum">
+                    <option default="X">
+                        <item>X</item>
+                        <item>Y</item>
+                        <item>W</item>
+                        <item>Z</item>
+                    </option>
+                </item>
+                <item name="工作波道" function="201" type="numeric" checkable="false">
+                    <numeric unit="波道">
+                        <item default="18" ratio="1" step="1" range="[1,126]" />
+                    </numeric>
+                </item>
+                <item name="距离模拟" function="205" type="numeric">
+                    <numeric unit="公里">
+                        <item default="0" decimals="1" ratio="0.1" step="0.1" range="[0,70]" />
+                    </numeric>
+                </item>
+                <item name="距离速度模拟" function="206" type="numeric">
+                    <numeric unit="公里">
+                        <item default="0" ratio="1" step="1" range="[-9999,9999]" />
+                    </numeric>
+                </item>
+                <item name="发射功率" function="211" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="-70" ratio="1" step="1" range="[-110,0]" />
+                    </numeric>
+                </item>
+                <item name="接收功率" function="212" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="20" ratio="1" step="10" range="[-30,50]" />
+                    </numeric>
+                </item>
+                <item name="复位" function="250" type="button" default="true" />
+            </general>
+            <!-- 微波测距 - 高级参数 -->
+            <advance name="高级">
+                <item name="方位/仰角比" function="4" type="enum">
+                    <option default="0 dB">
+                        <item>0 dB</item>
+                        <item>75 dB</item>
+                    </option>
+                </item>
+                <item name="同步1" function="5" type="enum">
+                    <option default="方位1">
+                        <!-- encode(4 bytes hex): data3 data2 data1 data0 -->
+                        <item encode="0x00000000">方位1</item>
+                        <item encode="0x01000000">仰角1</item>
+                        <item encode="0x02000000">反方位1</item>
+                        <item encode="0x03000000">微波周期</item>
+                        <item encode="0x00010000">基本数据字1</item>
+                        <item encode="0x01010000">基本数据字2</item>
+                        <item encode="0x02010000">基本数据字3</item>
+                        <item encode="0x03010000">基本数据字4</item>
+                        <item encode="0x04010000">基本数据字5</item>
+                        <item encode="0x05010000">基本数据字6</item>
+                        <item encode="0x00020000">辅助数据字1</item>
+                        <item encode="0x01020000">辅助数据字2</item>
+                        <item encode="0x02020000">辅助数据字3</item>
+                        <item encode="0x03020000">辅助数据字4</item>
+                        <item encode="0x00030000">方位2</item>
+                        <item encode="0x01030000">仰角2</item>
+                        <item encode="0x02030000">反方位2</item>
+                        <item encode="0x03030000">6.75 Hz</item>
+                        <item encode="0x04030000">螺旋桨</item>
+                        <item encode="0x00040000">方位3</item>
+                        <item encode="0x01040000">仰角3</item>
+                        <item encode="0x02040000">反方位3</item>
+                    </option>
+                </item>
+                <item name="同步2" function="251" type="enum">
+                    <option default="半幅输出">
+                        <!-- encode(4 bytes): data3 data2 data1 data0 -->
+                        <item encode="0x00000000">半幅输出</item>
+                        <item encode="0x01000000">IA询问译码</item>
+                        <item encode="0x02000000">FA询问译码</item>
+                        <item encode="0x00010000">基本数据字1</item>
+                        <item encode="0x01010000">基本数据字2</item>
+                        <item encode="0x02010000">基本数据字3</item>
+                        <item encode="0x03010000">基本数据字4</item>
+                        <item encode="0x04010000">基本数据字5</item>
+                        <item encode="0x05010000">基本数据字6</item>
+                        <item encode="0x00020000">辅助数据字1</item>
+                        <item encode="0x01020000">辅助数据字2</item>
+                        <item encode="0x02020000">辅助数据字3</item>
+                        <item encode="0x03020000">辅助数据字4</item>
+                        <item encode="0x00030000">方位1</item>
+                        <item encode="0x01030000">仰角1</item>
+                        <item encode="0x02030000">反方位1</item>
+                        <item encode="0x03030000">6.75 Hz</item>
+                        <item encode="0x04030000">螺旋桨</item>
+                        <item encode="0x00040000">方位2</item>
+                        <item encode="0x01040000">仰角2</item>
+                        <item encode="0x02040000">反方位2</item>
+                    </option>
+                </item>
+                <item name="方位信号开关" function="7" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位主波束幅度" function="9" type="numeric">
+                    <numeric unit="dB">
+                        <item default="7" ratio="1" step="1" range="[-3,13]" />
+                    </numeric>
+                </item>
+                <item name="方位波形" function="10" type="enum">
+                    <option default="正常波形">
+                        <item>正常波形</item>
+                        <item>半波形</item>
+                    </option>
+                </item>
+                <item name="方位后OCI幅度" function="12" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="方位左OCI幅度" function="13" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="方位右OCI幅度" function="14" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="高速方位开关" function="15" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="高速方位主波束幅度" function="17" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,13]" />
+                    </numeric>
+                </item>
+                <item name="高速方位波形" function="18" type="enum">
+                    <option default="半波形">
+                        <item>正常波形</item>
+                        <item>半波形</item>
+                    </option>
+                </item>
+                <item name="高速方位后OCI幅度" function="20" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="高速方位左OCI幅度" function="21" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="高速方位右OCI幅度" function="22" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="仰角开关" function="23" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="仰角主波束幅度" function="25" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,13]" />
+                    </numeric>
+                </item>
+                <item name="仰角波形" function="26" type="enum">
+                    <option default="正常波形">
+                        <item>正常波形</item>
+                        <item>半波形</item>
+                    </option>
+                </item>
+                <item name="仰角上OCI幅度" function="28" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="反方位开关" function="29" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="反方位模拟值" function="30" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[-42,42]" />
+                    </numeric>
+                </item>
+                <item name="反方位主波束幅度" function="31" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,13]" />
+                    </numeric>
+                </item>
+                <item name="反方位波形" function="32" type="enum">
+                    <option default="正常波形">
+                        <item>正常波形</item>
+                        <item>半波形</item>
+                    </option>
+                </item>
+                <item name="反方位波束宽度" function="33" type="enum">
+                    <option default="0.5 °">
+                        <item>0.5 °</item>
+                        <item>1 °</item>
+                        <item>2 °</item>
+                        <item>3 °</item>
+                        <item>4 °</item>
+                        <item>5 °</item>
+                    </option>
+                </item>
+                <item name="反方位后OCI幅度" function="34" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="反方位左OCI幅度" function="35" type="numeric">
+                    <numeric unit="dB">
+                        <item default="4" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="反方位右OCI幅度" function="36" type="numeric">
+                    <numeric unit="dB">
+                        <item default="5" ratio="1" step="1" range="[-4,7]" />
+                    </numeric>
+                </item>
+                <item name="数据字1开关" function="37" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位天线到入口距离" function="38" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="100" step="100" range="[0,6300]" />
+                    </numeric>
+                </item>
+                <item name="方位比例覆盖负限" function="39" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" ratio="2" step="2" range="[0,62]" />
+                    </numeric>
+                </item>
+                <item name="方位比例覆盖正限" function="40" type="numeric">
+                    <numeric unit="°">
+                        <item default="14" ratio="2" step="2" range="[0,62]" />
+                    </numeric>
+                </item>
+                <item name="余隙类型" function="41" type="enum">
+                    <option default="扫描余隙">
+                        <item>脉冲余隙</item>
+                        <item>扫描余隙</item>
+                    </option>
+                </item>
+                <item name="数据字2开关" function="44" type="enum">
+                    <option default="开">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="最低下滑角" function="45" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="1" ratio="0.1" step="0.1" range="[0,14.7]" />
+                    </numeric>
+                </item>
+                <item name="反方位台状态" function="46" type="enum">
+                    <option default="无辐射">
+                        <item>无辐射</item>
+                        <item>正常</item>
+                    </option>
+                </item>
+                <item name="DME台状态" function="47" type="enum">
+                    <option default="仅IA模式或DME/N有效">
+                        <item>DME应答器未工作或无效</item>
+                        <item>仅IA模式或DME/N有效</item>
+                        <item>FA模式，标准1有效</item>
+                        <item>FA模式，标准2有效</item>
+                    </option>
+                </item>
+                <item name="方位台状态" function="48" type="enum">
+                    <option default="无辐射">
+                        <item>无辐射</item>
+                        <item>正常</item>
+                    </option>
+                </item>
+                <item name="仰角台状态" function="49" type="enum">
+                    <option default="无辐射">
+                        <item>无辐射</item>
+                        <item>正常</item>
+                    </option>
+                </item>
+                <item name="数据字3开关" function="52" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位波束宽度" function="53" type="numeric">
+                    <numeric unit="°">
+                        <item default="0.5" decimals="1" ratio="0.5" step="0.5" range="[0.5,4]" />
+                    </numeric>
+                </item>
+                <item name="仰角波束宽度" function="54" type="numeric">
+                    <numeric unit="°">
+                        <item default="0.5" decimals="1" ratio="0.5" step="0.5" range="[0.5,2.5]" />
+                    </numeric>
+                </item>
+                <item name="DME距离" function="55" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" decimals="1" ratio="12.5" step="12.5" range="[0,6387.5]" />
+                    </numeric>
+                </item>
+                <item name="数据字4开关" function="58" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位磁方位" function="59" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" ratio="1" step="1" range="[0,359]" />
+                    </numeric>
+                </item>
+                <item name="反方位磁方位" function="60" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" ratio="1" step="1" range="[0,359]" />
+                    </numeric>
+                </item>
+                <item name="数据字5开关" function="63" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="反方位覆盖负限" function="64" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" ratio="2" step="2" range="[0,42]" />
+                    </numeric>
+                </item>
+                <item name="反方位覆盖正限" function="65" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" ratio="2" step="2" range="[0,42]" />
+                    </numeric>
+                </item>
+                <item name="反方位波束宽度" function="66" type="numeric">
+                    <numeric unit="°">
+                        <item default="0.5" decimals="1" ratio="0.5" step="0.5" range="[0.5,4]" />
+                    </numeric>
+                </item>
+                <item name="反方位状态" function="67" type="enum">
+                    <option default="无辐射">
+                        <item>无辐射</item>
+                        <item>正常</item>
+                    </option>
+                </item>
+                <item name="数据字6开关" function="70" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="莫尔斯码1" function="71" type="numeric">
+                    <numeric>
+                        <item default="A" ratio="1" step="1" range="[A,Z]" offset="-64" />
+                    </numeric>
+                </item>
+                <item name="莫尔斯码2" function="72" type="numeric">
+                    <numeric>
+                        <item default="A" ratio="1" step="1" range="[A,Z]" offset="-64" />
+                    </numeric>
+                </item>
+                <item name="莫尔斯码3" function="73" type="numeric">
+                    <numeric>
+                        <item default="A" ratio="1" step="1" range="[A,Z]" offset="-64" />
+                    </numeric>
+                </item>
+                <item name="辅助数据字A1开关" function="80" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位天线偏置" function="81" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="1" step="1" range="[-511,511]" />
+                    </numeric>
+                </item>
+                <item name="方位天线距MLS数据点距离" function="82" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="1" step="1" range="[0,8191]" />
+                    </numeric>
+                </item>
+                <item name="对准跑道中心线方位" function="83" type="numeric">
+                    <numeric unit="°">
+                        <item default="0.02" decimals="2" ratio="0.01" step="0.01" range="[-20.47,20.47]" />
+                    </numeric>
+                </item>
+                <item name="方位台坐标系统" function="84" type="enum">
+                    <option default="圆锥的">
+                        <item>圆锥的</item>
+                        <item>平面的</item>
+                    </option>
+                </item>
+                <item name="辅助数据字A2开关" function="87" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="仰角天线偏置" function="88" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="1" step="1" range="[-511,511]" />
+                    </numeric>
+                </item>
+                <item name="MLS数据点到入口点距离" function="89" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="1" step="1" range="[0,1023]" />
+                    </numeric>
+                </item>
+                <item name="仰角台天线中心高度" function="90" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" decimals="1" ratio="0.1" step="0.1" range="[-6.3,6.3]" />
+                    </numeric>
+                </item>
+                <item name="辅助数据字A3开关" function="93" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="DME台偏置" function="94" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="1" step="1" range="[-511,511]" />
+                    </numeric>
+                </item>
+                <item name="DME台到MLS数据点距离" function="95" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="1" step="1" range="[-8191,8191]" />
+                    </numeric>
+                </item>
+                <item name="辅助数据字A4开关" function="98" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="反方位台偏置" function="99" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="1" step="1" range="[-511,511]" />
+                    </numeric>
+                </item>
+                <item name="反方位台到MLS数据点距离" function="100" type="numeric">
+                    <numeric unit="米">
+                        <item default="0" ratio="1" step="1" range="[0,2047]" />
+                    </numeric>
+                </item>
+                <item name="对准跑道中心线的反方位" function="101" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.01" step="0.01" range="[-20.47,20.47]" />
+                    </numeric>
+                </item>
+                <item name="6.75Hz干扰开关" function="120" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="螺旋桨频率设置" function="122" type="numeric">
+                    <numeric unit="Hz">
+                        <item default="1" ratio="1" step="1" range="[1,199]" />
+                    </numeric>
+                </item>
+                <item name="主路径有效设置" function="124" type="enum">
+                    <option default="关闭所有主路径">
+                        <item>关闭所有主路径</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="大序列周期设置" function="126" type="numeric">
+                    <numeric unit="ms">
+                        <item default="0" ratio="1" step="1" range="[0,5]" />
+                    </numeric>
+                </item>
+                <item name="识别开关" function="130" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位更新率" function="131" type="enum">
+                    <option default="0.25 %">
+                        <item>0.25 %</item>
+                        <item>45.55 %</item>
+                        <item>75 %</item>
+                        <item>100 %</item>
+                    </option>
+                </item>
+                <item name="仰角更新率" function="132" type="enum">
+                    <option default="0.25 %">
+                        <item>0.25 %</item>
+                        <item>45.55 %</item>
+                        <item>75 %</item>
+                        <item>100 %</item>
+                    </option>
+                </item>
+                <item name="反方位更新率" function="133" type="enum">
+                    <option default="0.25 %">
+                        <item>0.25 %</item>
+                        <item>45.55 %</item>
+                        <item>75 %</item>
+                        <item>100 %</item>
+                    </option>
+                </item>
+                <item name="方位多路径开关" function="140" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位多路径模拟" function="141" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[-60,60]" />
+                    </numeric>
+                </item>
+                <item name="方位多路径电平" function="142" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,10]" />
+                    </numeric>
+                </item>
+                <item name="方位多路径波束宽度" function="143" type="numeric">
+                    <numeric unit="°">
+                        <item default="0.5" decimals="1" ratio="0.5" step="0.5" range="[0.5,4]" />
+                    </numeric>
+                </item>
+                <item name="高速方位多路径开关" function="144" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="高速方位多路径模拟" function="145" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[-40,40]" />
+                    </numeric>
+                </item>
+                <item name="高速方位多路径电平" function="146" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,10]" />
+                    </numeric>
+                </item>
+                <item name="高速方位多路径波束宽度" function="147" type="numeric">
+                    <numeric unit="°">
+                        <item default="0.5" decimals="1" ratio="0.5" step="0.5" range="[0.5,4]" />
+                    </numeric>
+                </item>
+                <item name="仰角多路径开关" function="148" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="仰角多路径模拟" function="149" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[-1,20]" />
+                    </numeric>
+                </item>
+                <item name="仰角多路径电平" function="150" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,10]" />
+                    </numeric>
+                </item>
+                <item name="仰角多路径波束宽度" function="151" type="numeric">
+                    <numeric unit="°">
+                        <item default="0.5" decimals="1" ratio="0.5" step="0.5" range="[0.5,4]" />
+                    </numeric>
+                </item>
+                <item name="反方位多路径开关" function="152" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="反方位多路径模拟" function="153" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[-40,40]" />
+                    </numeric>
+                </item>
+                <item name="反方位多路径电平" function="154" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,10]" />
+                    </numeric>
+                </item>
+                <item name="反方位多路径波束宽度" function="155" type="numeric">
+                    <numeric unit="°">
+                        <item default="0.5" decimals="1" ratio="0.5" step="0.5" range="[0.5,4]" />
+                    </numeric>
+                </item>
+                <item name="手动/自动" function="160" type="enum">
+                    <option default="手动">
+                        <item>手动</item>
+                        <item>自动</item>
+                    </option>
+                </item>
+                <item name="速率设置M801" function="161" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" decimals="2" ratio="0.05" step="0.05" range="[0,1.0]" />
+                    </numeric>
+                </item>
+                <item name="方位衰落率开关" function="170" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位衰落率参数设置" function="171" type="enum">
+                    <option default="0.05 Hz">
+                        <item>0.05 Hz</item>
+                        <item>1 Hz</item>
+                        <item>2 Hz</item>
+                    </option>
+                </item>
+                <item name="反方位衰落率开关" function="172" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="反方位衰落率参数设置" function="173" type="enum">
+                    <option default="0.05 Hz">
+                        <item>0.05 Hz</item>
+                        <item>1 Hz</item>
+                        <item>2 Hz</item>
+                    </option>
+                </item>
+                <item name="仰角衰落率开关" function="174" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="仰角衰落率参数设置" function="175" type="enum">
+                    <option default="0.05 Hz">
+                        <item>0.05 Hz</item>
+                        <item>1 Hz</item>
+                        <item>2 Hz</item>
+                    </option>
+                </item>
+                <item name="高速方位衰落率开关" function="176" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="高速方位衰落率参数设置" function="177" type="enum">
+                    <option default="0.05 Hz">
+                        <item>0.05 Hz</item>
+                        <item>1 Hz</item>
+                        <item>2 Hz</item>
+                    </option>
+                </item>
+                <item name="方位余隙开关" function="180" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="方位余隙模拟" function="181" type="numeric">
+                    <numeric unit="°">
+                        <item default="1" decimals="2" ratio="0.05" step="0.05" range="[-61,61]">
+                            <without>(-1,1)</without>
+                        </item>
+                    </numeric>
+                </item>
+                <item name="方位余隙左电平" function="182" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,3]" />
+                    </numeric>
+                </item>
+                <item name="方位余隙右电平" function="183" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,3]" />
+                    </numeric>
+                </item>
+                <item name="高速方位余隙开关" function="184" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="高速方位余隙模拟" function="185" type="numeric">
+                    <numeric unit="°">
+                        <item default="1" decimals="2" ratio="0.05" step="0.05" range="[-41,41]">
+                            <without>(-1,1)</without>
+                        </item>
+                    </numeric>
+                </item>
+                <item name="高速方位余隙左电平" function="186" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,3]" />
+                    </numeric>
+                </item>
+                <item name="高速方位余隙右电平" function="187" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,3]" />
+                    </numeric>
+                </item>
+                <item name="反方位余隙开关" function="188" type="enum">
+                    <option default="关">
+                        <item>关</item>
+                        <item>开</item>
+                    </option>
+                </item>
+                <item name="反方位余隙模拟" function="189" type="numeric">
+                    <numeric unit="°">
+                        <item default="1" decimals="2" ratio="0.05" step="0.05" range="[-41,41]">
+                            <without>(-1,1)</without>
+                        </item>
+                    </numeric>
+                </item>
+                <item name="反方位余隙左电平" function="190" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,3]" />
+                    </numeric>
+                </item>
+                <item name="反方位余隙右电平" function="191" type="numeric">
+                    <numeric unit="dB">
+                        <item default="0" ratio="1" step="1" range="[-3,3]" />
+                    </numeric>
+                </item>
+                <item name="工作模式" function="202" type="enum">
+                    <option default="IA">
+                        <item>IA</item>
+                        <item>FA</item>
+                        <item>AUTO</item>
+                    </option>
+                </item>
+                <item name="脉冲编码" function="203" type="numeric">
+                    <numeric unit="微秒">
+                        <item default="0" decimals="1" ratio="0.1" step="0.1" range="[-6,6]" />
+                    </numeric>
+                </item>
+                <item name="回答/识别" function="204" type="enum">
+                    <option default="正常">
+                        <item>正常</item>
+                        <item>识别</item>
+                        <item>回答</item>
+                    </option>
+                </item>
+                <item name="回答概率" function="207" type="numeric">
+                    <numeric unit="%">
+                        <item default="0" ratio="1" step="1" range="[0,80]" />
+                    </numeric>
+                </item>
+                <item name="随机填充数" function="208" type="numeric">
+                    <numeric unit="对/秒">
+                        <item default="0" ratio="1" step="1" range="[0,9999]" />
+                    </numeric>
+                </item>
+                <item name="同步选择" function="209" type="enum">
+                    <option default="半幅输出">
+                        <item>半幅输出</item>
+                        <item>IA译码</item>
+                        <item>FA译码</item>
+                    </option>
+                </item>
+            </advance>
+        </mwpdmd>
+        <instrument name="仪表着陆" header0="0x49" header1="0x4C" header2="0x53" deviceid="0xF0">
+            <!-- 仪表着陆 - 常规参数 -->
+            <general name="常规">
+                <item name="航向工作波道" function="1" type="numeric">
+                    <numeric unit="波道">
+                        <item default="1" ratio="1" step="1" range="[1,40]" />
+                    </numeric>
+                </item>
+                <item name="航向功率" function="2" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="-70" ratio="1" step="1" range="[-110,0]" />
+                    </numeric>
+                </item>
+                <item name="航向调制度差" function="3" type="numeric">
+                    <numeric unit="DDM">
+                        <item default="0" decimals="3" ratio="0.001" step="0.001" range="[-0.4,0.4]" />
+                    </numeric>
+                </item>
+                <item name="下滑工作波道" function="20" type="numeric">
+                    <numeric unit="波道">
+                        <item default="1" ratio="1" step="1" range="[1,40]" />
+                    </numeric>
+                </item>
+                <item name="下滑功率" function="21" type="numeric">
+                    <numeric unit="dBm">
+                        <item default="-70" ratio="1" step="1" range="[-110,0]" />
+                    </numeric>
+                </item>
+                <item name="航向调制度差" function="22" type="numeric">
+                    <numeric unit="DDM">
+                        <item default="0" decimals="3" ratio="0.001" step="0.001" range="[-0.8,0.8]" />
+                    </numeric>
+                </item>
+                <item name="复位" function="250" type="button" default="true" />
+            </general>
+            <!-- 仪表着陆 - 高级参数 -->
+            <advance name="高级">
+                <item name="航向90Hz频率" function="4" type="numeric">
+                    <numeric unit="Hz">
+                        <item default="81" decimals="1" ratio="0.1" step="0.1" range="[81,99]" />
+                    </numeric>
+                </item>
+                <item name="航向150Hz频率" function="5" type="numeric">
+                    <numeric unit="Hz">
+                        <item default="135" decimals="1" ratio="0.1" step="0.1" range="[135,165]" />
+                    </numeric>
+                </item>
+                <item name="航向90、150Hz相位差" function="6" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" ratio="1" step="1" range="[-20,20]" />
+                    </numeric>
+                </item>
+                <item name="航向1020Hz频率" function="7" type="numeric">
+                    <numeric unit="Hz">
+                        <item default="918" decimals="1" ratio="0.1" step="0.1" range="[918,1122]" />
+                    </numeric>
+                </item>
+                <item name="航向1020Hz调制度" function="8" type="numeric">
+                    <numeric unit="%">
+                        <item default="0" ratio="1" step="1" range="[0,100]" />
+                    </numeric>
+                </item>
+                <item name="同步" function="9" type="enum">
+                    <option default="30 Hz">
+                        <item>30 Hz</item>
+                        <item>90 Hz</item>
+                        <item>150 Hz</item>
+                        <item>1020 Hz</item>
+                    </option>
+                </item>
+                <item name="识别控制" function="12" type="enum">
+                    <option default="正常">
+                        <item>正常</item>
+                        <item>常识别</item>
+                        <item>关识别</item>
+                    </option>
+                </item>
+                <item name="下滑90Hz频率" function="23" type="numeric">
+                    <numeric unit="Hz">
+                        <item default="81" decimals="1" ratio="0.1" step="0.1" range="[81,99]" />
+                    </numeric>
+                </item>
+                <item name="下滑150Hz频率" function="24" type="numeric">
+                    <numeric unit="Hz">
+                        <item default="135" decimals="1" ratio="0.1" step="0.1" range="[135,165]" />
+                    </numeric>
+                </item>
+                <item name="下滑90、150Hz相位差" function="25" type="numeric">
+                    <numeric unit="°">
+                        <item default="0" ratio="1" step="1" range="[-20,20]" />
+                    </numeric>
+                </item>
+                <item name="同步" function="28" type="enum">
+                    <option default="30 Hz">
+                        <item>30 Hz</item>
+                        <item>90 Hz</item>
+                        <item>150 Hz</item>
+                    </option>
+                </item>
+            </advance>
+        </instrument>
+        <!-- 网口数据监视 -->
+        <monitor name="数据监视" size="55" header="0x6261" tail="0x6463">
+            <item name="距离" type="numeric" checkable="false" editable="false">
+                <numeric unit="米" offset="2">
+                    <item decimals="1" ratio="0.1" step="0.1" />
+                </numeric>
+            </item>
+            <item name="方位" type="numeric" checkable="false" editable="false">
+                <numeric unit="°" offset="6">
+                    <item decimals="1" ratio="0.1" step="0.1" />
+                </numeric>
+            </item>
+            <item name="幅度" type="numeric" checkable="false" editable="false">
+                <numeric unit="米" offset="10">
+                    <item decimals="1" ratio="0.1" step="0.1" />
+                </numeric>
+            </item>
+            <item name="频率" type="numeric" checkable="false" editable="false">
+                <numeric unit="Hz" offset="14">
+                    <item decimals="1" ratio="0.1" step="0.1" />
+                </numeric>
+            </item>
+        </monitor>
+    </network>
+    <serialport>
+        <altimeter name="高度表">
+            <frame name="工作模式" header="0x75" id="0x52" length="5" function="0" tail="0xF5">
+                <item name="高度" type="numeric" checkable="false">
+                    <numeric unit="米">
+                        <item default="0" decimals="1" ratio="0.2" step="0.2" range="[0,8100]" />
+                    </numeric>
+                </item>
+            </frame>
+            <frame name="衰减控制" header="0x75" id="0x53" length="6" crc16="0x0000" tail="0xF5">
+                <item name="数据有效性" type="enum" checkable="false">
+                    <option default="无效">
+                        <item encode="0x00000000">无效</item>
+                        <item encode="0x00000001">有效</item>
+                    </option>
+                </item>
+                <item name="衰减量" type="numeric" checkable="false">
+                    <numeric unit="dB">
+                        <item default="0" decimals="1" ratio="0.2" step="0.2" range="[0,255]" />
+                    </numeric>
+                </item>
+            </frame>
+            <frame name="应答模式" header="0x75" id="0x54" length="6" crc16="0x0000" tail="0xF5">
+                <item name="应答状态" type="enum" offset="0" width="1" editable="false">
+                    <option>
+                        <item encode="0x00000000">NACK（应答失败）</item>
+                        <item encode="0x00000001">ACK（应答成功）</item>
+                    </option>
+                </item>
+                <item name="重传请求" type="enum" offset="1" width="1" editable="false">
+                    <option>
+                        <item encode="0x00000000">需要重传</item>
+                        <item encode="0x00000001">不需要重传</item>
+                    </option>
+                </item>
+            </frame>
+        </altimeter>
+    </serialport>
+</cniconsole>
